@@ -112,6 +112,20 @@ section{padding:80px 0;}
 .project-card a{align-self:flex-start;color:var(--pink);text-decoration:none;font-size:.83rem;font-weight:600;transition:.2s;}
 .project-card a:hover{opacity:.75;}
 
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:.3s;box-shadow:0 1px 3px rgba(15,17,21,.04);}
+.blog-card:hover{transform:translateY(-6px);border-color:rgba(233,30,140,.4);}
+.blog-card-img{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,rgba(233,30,140,.14),rgba(139,0,224,.14));display:flex;align-items:center;justify-content:center;}
+.blog-card-img svg{width:34px;height:34px;stroke:var(--pink);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.blog-card-body{padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.blog-tag{align-self:flex-start;font-size:.7rem;font-weight:600;color:var(--pink);background:rgba(233,30,140,.08);padding:4px 12px;border-radius:20px;}
+.blog-card h3{font-size:1rem;font-weight:700;color:var(--text);}
+.blog-card p{color:var(--muted);font-size:.85rem;line-height:1.55;}
+.blog-card a{margin-top:auto;color:var(--pink);text-decoration:none;font-size:.83rem;font-weight:600;transition:.2s;}
+.blog-card a:hover{opacity:.75;}
+.blog-cta{text-align:center;margin-top:40px;}
+
 /* FEEDBACKS */
 .feedbacks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .feedback-card{border-radius:22px;overflow:hidden;transition:.3s;box-shadow:0 1px 3px rgba(15,17,21,.06);line-height:0;}
@@ -150,13 +164,14 @@ header{padding:100px 0 60px;}
 .sobre-card{padding:32px 20px;}
 .sobre-text p{text-align:left;}
 .depoimento-author{flex-direction:column;text-align:center;}
-.soft-skills,.projects-grid,.feedbacks-grid{grid-template-columns:1fr;}
+.soft-skills,.projects-grid,.feedbacks-grid,.blog-grid{grid-template-columns:1fr;}
 section{padding:60px 0;}
 }
 @media(min-width:769px) and (max-width:1024px){
 .soft-skills{grid-template-columns:repeat(2,1fr);}
 .projects-grid{grid-template-columns:repeat(2,1fr);}
 .feedbacks-grid{grid-template-columns:repeat(2,1fr);}
+.blog-grid{grid-template-columns:repeat(2,1fr);}
 }
 .whatsapp-float{
   position:fixed;
@@ -200,7 +215,7 @@ section{padding:60px 0;}
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#clientes">Projetos</a></li>
       <li><a href="#feedbacks">Feedbacks</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#blog">Blog</a></li>
     </ul>
     <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="nav-cta">Contato</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -378,6 +393,57 @@ section{padding:60px 0;}
         <a href="https://www.lopesmoradiacarioca.com.br/" target="_blank">Visitar site →</a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="container">
+    <div class="section-title">
+      <h2>Últimos posts do <span class="gradient">Blog</span></h2>
+      <p>Conteúdos sobre SEO, GEO e marketing digital</p>
+    </div>
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-tag">SEO</span>
+          <h3>Como funciona o SEO na era das buscas com IA</h3>
+          <p>Entenda as mudanças no comportamento de busca e como se preparar para aparecer nas respostas geradas por IA.</p>
+          <a href="https://debora9415.github.io/portfolio-debora/blog.html" target="_blank">Ler artigo →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Marketing de Conteúdo</span>
+          <h3>Como estruturar um planejamento editorial eficiente</h3>
+          <p>Um passo a passo prático para organizar pautas, prazos e metas de conteúdo do seu time.</p>
+          <a href="https://debora9415.github.io/portfolio-debora/blog.html" target="_blank">Ler artigo →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Automação</span>
+          <h3>Automação de marketing: por onde começar</h3>
+          <p>Os primeiros passos para montar fluxos de nutrição de leads e conectar sua estratégia ao CRM.</p>
+          <a href="https://debora9415.github.io/portfolio-debora/blog.html" target="_blank">Ler artigo →</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="blog-cta">
+      <a href="https://debora9415.github.io/portfolio-debora/blog.html" target="_blank" class="btn btn-primary">Ver todos os posts</a>
     </div>
   </div>
 </section>

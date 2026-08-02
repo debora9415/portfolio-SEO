@@ -49,6 +49,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(241,242,244,
   .nav-links{display:none;}.nav-cta{display:none;}.nav-toggle{display:flex;}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(241,242,244,.98);padding:20px 5%;border-bottom:1px solid var(--border);gap:18px;}
   .nav-links.open a{font-size:1rem;}
+    <li><a href="#faq">FAQ</a></li>
 }
 
 /* HEADER */
@@ -151,6 +152,19 @@ footer p{color:var(--muted);margin-bottom:28px;font-size:.95rem;}
 .footer-links a:hover{opacity:.75;}
 .footer-note{color:#9095a1;font-size:.75rem;}
 
+  /* FAQ */
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.3s;}
+.faq-item.open{border-color:rgba(233,30,140,.3);}
+.faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;color:var(--text);text-align:left;}
+.faq-question:hover{color:var(--pink);}
+.faq-icon{width:20px;height:20px;flex-shrink:0;stroke:var(--pink);transition:transform .3s;}
+.faq-item.open .faq-icon{transform:rotate(180deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;}
+.faq-item.open .faq-answer{max-height:300px;}
+.faq-answer p{padding:0 24px 20px;color:var(--muted);font-size:.9rem;line-height:1.75;}
+.faq-answer a{color:var(--pink);font-weight:600;}
+
 /* RESPONSIVE */
 @media(max-width:768px){
 .skill-card{flex:0 0 82%;}
@@ -205,6 +219,14 @@ section{padding:60px 0;}
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.86L.057 23.25a.75.75 0 0 0 .916.932l5.544-1.453A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.427l-.36-.216-3.294.864.88-3.21-.235-.373A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
 </a>
+  <script>
+function toggleFaq(btn){
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(el){ el.classList.remove('open'); });
+  if(!isOpen) item.classList.add('open');
+}
+</script>
 <body>
 
 <nav>
@@ -222,7 +244,7 @@ section{padding:60px 0;}
   </div>
 </nav>
 <script>document.getElementById('navToggle').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('open');});</script>
-
+  
 <header>
   <div class="container">
     <div class="hero-wrapper">
@@ -484,6 +506,88 @@ section{padding:60px 0;}
         <div class="soft-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
         <h3>Aprendizado Contínuo</h3>
         <p>Busca constante por atualização e evolução profissional.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+      <section id="faq">
+  <div class="container">
+    <div class="section-title">
+      <h2>Perguntas <span class="gradient">Frequentes</span></h2>
+      <p>Tire suas dúvidas sobre SEO e como posso ajudar o seu negócio</p>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          O que é SEO?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>SEO (<em>Search Engine Optimization</em>) é o conjunto de estratégias técnicas e de conteúdo que fazem um site aparecer nos primeiros resultados do Google de forma orgânica, sem pagar por anúncios. Envolve desde a estrutura e velocidade do site até a forma como o conteúdo responde às perguntas reais do seu público.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          O que é GEO e como faço para ser citado pelas IAs?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>GEO (<em>Generative Engine Optimization</em>) é a otimização do seu conteúdo para ser reconhecido, confiado e citado por ferramentas de IA como ChatGPT, Perplexity e Google com IA. Para isso, é preciso ter uma base sólida de SEO, conteúdo com autoridade real, dados estruturados e uma presença digital consistente. Sem SEO, não há GEO.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Quanto tempo leva para ver resultados com SEO?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Em geral, os primeiros resultados aparecem entre 3 e 6 meses e, resultados mais consistentes, entre 6 e 12 meses. O prazo varia de acordo com a concorrência do nicho, o estado atual do site e a frequência de publicação de conteúdo. SEO é um investimento de acúmulo, quanto mais cedo começa, mais cedo colhe os frutos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Posso fazer tráfego pago e SEO ao mesmo tempo?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Sim, e as duas estratégias se complementam muito bem. O tráfego pago traz resultados imediatos enquanto o SEO constrói uma base orgânica sustentável. A grande vantagem do SEO é que, uma vez consolidado, continua gerando visitas mesmo quando o orçamento de anúncios é reduzido ou pausado.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          SEO funciona para pequenas empresas?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Funciona e, muitas vezes, com vantagem sobre grandes concorrentes. Pequenas empresas conseguem produzir conteúdo mais específico e próximo do público, o que pesa a favor delas tanto no Google quanto nas respostas de IA. Além disso, o custo por resultado tende a cair com o tempo, ao contrário da mídia paga.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          O que é SEO Técnico?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>SEO Técnico é a parte que garante que o Google (e as IAs) consigam rastrear, entender e indexar o seu site corretamente. Envolve velocidade de carregamento, estrutura de URLs, dados estruturados, correção de erros, sitemap, robots.txt e Core Web Vitals. É a fundação que sustenta todo o trabalho de conteúdo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Como é o processo de trabalho com você?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Começa com um diagnóstico do seu site e do seu mercado. A partir daí, definimos juntos a estratégia e quais palavras-chave priorizar, quais conteúdos criar ou otimizar e quais ajustes técnicos são necessários. O acompanhamento é contínuo, com relatórios de desempenho e ajustes ao longo do tempo. <a href="https://wa.me/55SEUNUMEROAQUI" style="color:#e91e8c;font-weight:600;">Fale comigo</a> e vamos conversar sobre o seu projeto.</p>
+        </div>
       </div>
 
     </div>

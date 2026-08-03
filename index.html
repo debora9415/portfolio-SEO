@@ -38,6 +38,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(241,242,244,
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 5%;max-width:1200px;margin:auto;}
 .nav-logo{font-weight:800;font-size:1rem;color:var(--text);text-decoration:none;}
 .nav-logo span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.logo-img{height:50px;width:auto;display:block;}
 .nav-links{display:flex;gap:24px;list-style:none;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:.2s;}
 .nav-links a:hover{color:var(--text);}
@@ -230,15 +231,13 @@ function toggleFaq(btn){
 <body>
 
 <nav>
+<nav>
   <div class="nav-inner">
-    .nav-logo img{
-    height:50px;   /* ajuste conforme o tamanho da sua logo */
-    width:auto;
-    display:block;
-}
+
     <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Logo da Débora Machado" class="logo-img">
-</a>
+      <img src="logo.png" alt="Logo Débora Machado" class="logo-img">
+    </a>
+
     <ul class="nav-links" id="navLinks">
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#clientes">Projetos</a></li>
@@ -246,8 +245,12 @@ function toggleFaq(btn){
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="https://debora9415.github.io/blog-debora/">Blog</a></li>
     </ul>
+
     <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="nav-cta">Contato</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
   </div>
 </nav>
 <script>document.getElementById('navToggle').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('open');});</script>

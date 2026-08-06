@@ -62,7 +62,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(241,242,244,
   .nav-links{display:none;}.nav-cta{display:none;}.nav-toggle{display:flex;}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(241,242,244,.98);padding:20px 5%;border-bottom:1px solid var(--border);gap:18px;}
   .nav-links.open a{font-size:1rem;}
-    <li><a href="#faq">FAQ</a></li>
 }
 
 /* HEADER */
@@ -178,6 +177,22 @@ footer p{color:var(--muted);margin-bottom:28px;font-size:.95rem;}
 .faq-answer p{padding:0 24px 20px;color:var(--muted);font-size:.9rem;line-height:1.75;}
 .faq-answer a{color:var(--pink);font-weight:600;}
 
+/* CHECKLISTS */
+.check-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;max-width:900px;margin:0 auto;}
+.check-item{display:flex;align-items:flex-start;gap:10px;background:var(--bg-card);border:1px solid var(--border);padding:14px 18px;border-radius:14px;font-size:.92rem;color:var(--text);box-shadow:0 1px 3px rgba(15,17,21,.04);}
+.check-item svg{flex-shrink:0;width:20px;height:20px;stroke:var(--pink);stroke-width:2.5;margin-top:2px;}
+
+/* TIMELINE */
+.timeline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;max-width:1000px;margin:0 auto;}
+.timeline-step{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;width:150px;}
+.timeline-num{width:44px;height:44px;border-radius:50%;background:var(--gradient);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;}
+.timeline-step span{font-size:.85rem;color:var(--muted);font-weight:500;}
+.timeline-arrow{color:var(--pink);font-size:1.4rem;font-weight:700;margin:0 4px;}
+@media(max-width:768px){.timeline{flex-direction:column;}.timeline-arrow{transform:rotate(90deg);margin:6px 0;}}
+
+/* CTA final */
+.footer-cta-btn{margin-bottom:28px;}
+
 /* RESPONSIVE */
 @media(max-width:768px){
 .skill-card{flex:0 0 82%;}
@@ -254,6 +269,7 @@ function toggleFaq(btn){
       <li><a href="#clientes">Projetos</a></li>
       <li><a href="#feedbacks">Feedbacks</a></li>
       <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="https://blog.beeseo.com.br">Blog</a></li>
     </ul>
 
@@ -271,11 +287,11 @@ function toggleFaq(btn){
     <div class="hero-wrapper">
       <div class="hero">
         <img src="dash_bord.png" alt="" class="hero-watermark" aria-hidden="true">
-        <span class="badge">Site • Portfólio</span>
-        <h1><span class="gradient">Visibilidade e resultados sem depender de anúncios</span></h1>
-        <p>Especialista em SEO para empresas que desejam ser encontradas no Google e nas IAs por meio de conteúdo estratégico, estrutura inteligente e crescimento orgânico.</p>
+        <span class="badge">SEO • GEO • Consultoria</span>
+        <h1><span class="gradient">Especialista em SEO para empresas que querem crescer de forma orgânica</span></h1>
+        <p>Ajudo empresas e agências a aumentar sua visibilidade no Google e nas IAs por meio de estratégia, conteúdo, SEO técnico e otimização contínua.</p>
         <div class="buttons">
-          <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="btn btn-primary">Contato</a>
+          <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="btn btn-primary">Agendar uma conversa</a>
           <a href="https://www.linkedin.com/in/d%C3%A9bora-m-722411142/" target="_blank" class="btn btn-outline">LinkedIn</a>
         </div>
       </div>
@@ -285,6 +301,22 @@ function toggleFaq(btn){
     </div>
   </div>
 </header>
+
+<section id="beneficios">
+  <div class="container">
+    <div class="section-title">
+      <h2>Posso ajudar sua empresa a <span class="gradient">crescer</span></h2>
+    </div>
+    <div class="check-list">
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aumentar o tráfego orgânico</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Estruturar uma estratégia de SEO</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Realizar auditorias técnicas</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Otimizar conteúdos existentes</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Produzir conteúdos estratégicos</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Preparar o site para IA (GEO)</div>
+    </div>
+  </div>
+</section>
 
 <section id="servicos">
   <div class="container">
@@ -380,7 +412,46 @@ function toggleFaq(btn){
   </div>
 </div>
 </section>
-  
+
+<section id="recrutadores">
+  <div class="container">
+    <div class="section-title">
+      <h2>Está contratando um <span class="gradient">profissional de SEO?</span></h2>
+      <p>Posso atuar como</p>
+    </div>
+    <div class="soft-skills">
+      <div class="soft">
+        <div class="soft-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
+        <h3>Freelancer</h3>
+        <p>Projetos pontuais com escopo definido.</p>
+      </div>
+      <div class="soft">
+        <div class="soft-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Consultoria</h3>
+        <p>Diagnóstico e direcionamento estratégico.</p>
+      </div>
+      <div class="soft">
+        <div class="soft-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Parceira para agências</h3>
+        <p>Apoio técnico e de conteúdo para o time.</p>
+      </div>
+      <div class="soft">
+        <div class="soft-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3>Projetos específicos</h3>
+        <p>Entregas com prazo e objetivo claros.</p>
+      </div>
+      <div class="soft">
+        <div class="soft-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Apoio a equipes internas</h3>
+        <p>Reforço de SEO para o time que já existe.</p>
+      </div>
+    </div>
+    <div class="cta-note" style="text-align:center;margin-top:32px;">
+      <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="btn btn-primary">Solicitar orçamento</a>
+    </div>
+  </div>
+</section>
+
 <section id="clientes">
   <div class="container">
     <div class="section-title">
@@ -452,6 +523,22 @@ function toggleFaq(btn){
   </div>
 </section>
 
+<section id="resultados">
+  <div class="container">
+    <div class="section-title">
+      <h2>Resultados que <span class="gradient">entrego</span></h2>
+    </div>
+    <div class="check-list">
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aumento de tráfego qualificado</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Crescimento de palavras-chave</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Melhoria de Core Web Vitals</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Otimização da arquitetura</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aumento da visibilidade nas IAs</div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Redução de problemas técnicos</div>
+    </div>
+  </div>
+</section>
+
 <section id="feedbacks">
   <div class="container">
     <div class="section-title">
@@ -475,6 +562,27 @@ function toggleFaq(btn){
     </div>
   </div>
 </section>
+
+<section id="agencias">
+  <div class="container">
+    <div class="section-title">
+      <h2>Parceria para <span class="gradient">Agências</span></h2>
+      <p>Posso apoiar sua equipe em</p>
+    </div>
+    <div class="soft-skills">
+      <div class="soft"><h3>Auditorias técnicas</h3></div>
+      <div class="soft"><h3>Produção de conteúdo</h3></div>
+      <div class="soft"><h3>SEO On Page</h3></div>
+      <div class="soft"><h3>SEO Técnico</h3></div>
+      <div class="soft"><h3>GEO</h3></div>
+      <div class="soft"><h3>Search Console</h3></div>
+      <div class="soft"><h3>Análise de concorrentes</h3></div>
+    </div>
+    <div class="cta-note" style="text-align:center;margin-top:32px;">
+      <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="btn btn-primary">Marcar uma reunião</a>
+    </div>
+  </div>
+</section>
       
     <section id="sobre">
   <div class="container">
@@ -492,19 +600,20 @@ function toggleFaq(btn){
       </div>
 
       <div class="sobre-text">
-      <p style="font-size:1.6rem;font-weight:700;margin-bottom:20px;">
-         Prazer, eu sou a Bee! 🐝
-      </p>
-        <p>
-          <strong>Bee</strong> significa <strong>abelha</strong>, uma referência ao significado do meu nome, <strong>Débora</strong>, no hebraico. Assim como uma colmeia é construída célula por célula, uma presença digital forte também é construída página por página, conteúdo por conteúdo, com estratégia, consistência e evolução contínua.
-        </p>
-
+      <p style="font-size:1.15rem;line-height:1.7;margin-bottom:24px;">
         <p>
           Sou formada em <strong>Comunicação pela UFRN</strong> e atuo há mais de <strong>7 anos no Marketing Digital</strong>, com participação em mais de <strong>50 projetos</strong> de diferentes segmentos.
         </p>
 
         <p>
           Hoje trabalho como <strong>Analista de conteúdo SEO</strong>, criando estratégias que ampliam a visibilidade orgânica de marcas no Google e nas IAs generativas. Também venho aprofundando meus conhecimentos em <strong>SEO Técnico</strong>, com foco em otimização de sites, arquitetura da informação e performance.
+        </p>
+
+        <p>
+          Criei a <strong>BeeSEO</strong> como um espaço para colocar em prática o que aprendo, testar estratégias de SEO e GEO na própria pele e mostrar, de forma concreta, os serviços que ofereço.
+        </p>
+        <p>
+          Assim como uma <strong>colmeia</strong> é construida célula por célula,uma presença digital é construída página por página e conteúdo por cconteúdo.
         </p>
 
         <p>
@@ -640,8 +749,9 @@ function toggleFaq(btn){
 </section>
 
 <footer>
-  <h2>Vamos <span class="gradient">conversar?</span></h2>
-  <p>Está buscando uma analista de merketing e SEO? Me chama.</p>
+  <h2>Precisa de uma <span class="gradient">especialista em SEO</span> para seu projeto?</h2>
+  <p>Vamos conversar sobre o seu site e onde ele pode chegar.</p>
+  <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="btn btn-primary footer-cta-btn">Solicitar orçamento</a>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/d%C3%A9bora-m-722411142/" target="_blank">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>

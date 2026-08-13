@@ -324,7 +324,6 @@ section{padding:60px 0;}
     right: 66px;
   }
 }
-}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Débora Machado","jobTitle":"Analista de SEO & Marketing de Conteúdo","url":"https://beeseo.com.br/","image":"https://beeseo.com.br/debora.png","sameAs":["https://www.linkedin.com/in/d%C3%A9bora-m-722411142/"],"knowsAbout":["SEO","GEO","Marketing de Conteúdo","WordPress","RD Station","Mailchimp","ActiveCampaign","Google Analytics 4","Search Console","SE Ranking"]}
@@ -837,6 +836,13 @@ section{padding:60px 0;}
   </div>
   <p class="footer-note">Débora Machado • SEO & Marketing Digital</p>
 </footer>
-
+      <script>
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
 </body>
 </html>

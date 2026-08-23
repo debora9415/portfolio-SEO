@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -413,10 +414,10 @@ section{padding:60px 0;}
         </div>
         <h3>Redação otimizada</h3>
         <p>Redação estratégica para páginas institucionais, landing pages, categorias, produtos e blogs.</p>
-          <div class="tool-row">
-    <span class="tool-badge">Google Meu Negócio</span>
-    </div>
-  </section>
+        <div class="tool-row">
+          <span class="tool-badge">Google Meu Negócio</span>
+        </div>
+      </div>
 
       <div class="skill-card">
         <div class="skill-icon">
@@ -492,6 +493,8 @@ section{padding:60px 0;}
     <span class="tool-badge">Google Meu Negócio</span>
   </div>
 </div>
+    </div>
+  </div>
 </section>
 
 <section id="recrutadores">
@@ -826,5 +829,29 @@ section{padding:60px 0;}
   <a href="https://wa.me/5584991132489" target="_blank" class="btn btn-primary" style="margin-bottom:32px;display:inline-block;">Solicitar orçamento</a>
   <p style="font-size:.78rem;color:#9095a1;">© 2026 BeeSEO. Todos os direitos reservados. | <a href="/politica-de-privacidade.html" style="color:#9095a1;">Política de Privacidade</a></p>
 </footer>
+<script>
+  function toggleFaq(button) {
+    const item = button.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+      openItem.classList.remove('open');
+      openItem.querySelector('.faq-answer').style.maxHeight = null;
+      openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      button.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  document.querySelectorAll('.faq-question').forEach(function (button) {
+    button.setAttribute('type', 'button');
+    button.setAttribute('aria-expanded', 'false');
+  });
+</script>
 </body>
 </html>
